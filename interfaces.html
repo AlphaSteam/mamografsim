@@ -1,187 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
 
 </head>
+
 <body>
-  <div id="contenedor-button" class ="contenedor-button">
-    <button class="open-sim" onclick="show_sim();"><img src="icons/play.png" width=64><br>Play</button>
-  </div>
-     
-    <div id="contenedor-sim" class ="contenedor-sim">
-        <!-- INTERFAZ MAMOGRAFO -->
-        <canvas id="canvas" class ="mamografo" width="400" height="600"></canvas>
+  <div class="contenedor-sim">
+    <!-- INTERFAZ MAMOGRAFO -->
+    <canvas id="canvas" class="mamografo" width="400" height="600"></canvas>
 
-        <!-- /INTERFAZ MAMOGRAFO -->
 
-        <!-- /INTERFAZ RESULTADOS -->
-        <canvas id="canvRes" class = "resultados" width="300" height="300"></canvas>
-        <!-- /INTERFAZ RESULTADOS -->
-        <div id="resultados" class = "resultados">
-          <h3 class="res-titulo">Resultados</h3>
-        </div>
-        <!-- INTERFAZ HERRAMIENTAS -->
 
-        <div class="herramientas-mini">
-            <h3 class="herrams-titulo">Herramientas</h3>
-            <div id="herramientas-express" class="herrams-lista">
-                <!-- <button title= "Esta es la herramienta X." class="herrams-boton" onclick="draw_tool();"> <img src="icons/ionizador.png" width=64><br>Ionizador</button>
+    <!-- /INTERFAZ MAMOGRAFO -->
+
+    <!-- /INTERFAZ RESULTADOS -->
+    <canvas id="canvRes" class="resultados" width="300" height="300"></canvas>
+    <!-- /INTERFAZ RESULTADOS -->
+
+    <!-- INTERFAZ HERRAMIENTAS -->
+
+    <div class="herramientas-mini">
+      <h3 class="herrams-titulo">Herramientas</h3>
+      <div id="herramientas-express" class="herrams-lista">
+        <!-- <button title= "Esta es la herramienta X." class="herrams-boton" onclick="draw_tool();"> <img src="icons/ionizador.png" width=64><br>Ionizador</button>
                 <button title= "Esta es la herramienta X." class="herrams-boton" ><img src="icons/thermometer.png" width=64><br>Termometro</button>
                 <button title= "Esta es la herramienta X." class="herrams-boton" ><img src="icons/barometer.png" width=64><br>Barometro</button>
                 <button title= "Esta es la herramienta X." class="herrams-boton" ><img src="icons/tape.png" width=64><br>Cinta</button> -->
-            </div>
-            <button class="boton-ver-mas" onclick="show_h()">Ver mas</button>
-          </div>
-        <!-- /INTERFAZ HERRAMIENTAS -->
-
-        <!-- INTERFAZ PASOS -->
-        <div class="pasos">
-            <h3 class="pasos-titulo">Pasos</h3>
-            <ol id="lista-pasos" class="pasos-lista">
-                <li>Elegir herramienta Balanza en la sección Herramientas.</li>
-                <li>Mantener el pedal izquierdo apretado hasta que el compresor llegue a su punto más bajo.</li>
-                <li>Una vez que el compresor tope con la balanza, en la sección Resultados aparecerá la fuerza real ejercida por la máquina. En el visor del mamógrafo aparecerá la fuerza calculada por el este. Anotar ambos valores en tabla de resultados</li>
-                <li>Apretar el pedal derecho para subir el compresor.</li>
-                <li>Si se quiere medir nuevamente el peso, repetir los puntos 2 y 3.</li>
-                <li>Para finalizar, apretar nuevamente el ícono de la Balanza en la sección Herramientas.</li>
-            </ol>
-        </div>
-        <!-- /INTERFAZ PASOS -->
-
-        <!-- INTERFAZ PANEL DE CONTROL -->
-        <div class="panel-control">
-            <h3>Panel de control</h3>
-            <div class="container" >
-              <div class="row">
-                <div class="col-sm">
-                  <form>
-                    <input type="number" id="kv" name="kv" min="22" max="35" class="kv_input" value=30>
-                    <input type="number" id="mas" name="mas" min="10" max="200" class="mas_input" value=100>
-                  </form>
-                </div>
-
-                <div class="col-sm" style="text-align:center;">
-                  <label class="kv_label"> kV</label>
-                  <label class="mas_label"> mAs</label>
-                </div>
-                <div class="col-sm" style="text-align:left;">
-                  <button class="btnsub" id="kv-" value="kv">-</button>
-                  <button class="btnadd" id="kv+" value="kv">+</button>
-                  <button class="btnsub" id="ma-" value="mas">-</button>
-                  <button class="btnadd" id="ma+" value="mas">+</button>
-                </div>
-              </div>
-            </div>
-
-            <div class="modes" >
-              <div class="container">
-                <div class="row" >
-                  <div class="col-sm">
-                    <button class="btnmode" id="mode-b">MODE</button>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-sm">
-                    <label > AutoKV <input type="radio"  name="mode" value="autokv" id="c01" checked disabled />  </label>
-                  </div>
-                  <div class="col-sm" >
-                    <label >  <input type="radio"  name="mode" value="manual" id="c03" disabled /> Manual </label>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm">
-                    <label > Auto Time <input type="radio"  name="mode" value="autotime" id="c02" disabled  />  </label>
-                  </div>
-
-                  <div class="col-sm" >
-                      <label >  <input type="radio"  name="mode" value="autopoint" id="c04" disabled /> Auto Point </label>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-
-            <div class="container">
-                <div class="filter-mode">
-                  <button class="fltmode" id="filter-b">filter</button>
-                  <label> Mo <input type="radio"  name="filter" value="mo" id="f01" checked disabled />  </label>
-                  <label> Rh <input type="radio"  name="filter" value="rh" id="f02" disabled />  </label>
-                  <label> W <input type="radio"  name="filter" value="w" id="f03" disabled />  </label>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="anode-mode">
-                  <button class="anodemode" id="anode-b">anode</button>
-                  <label > Mo <input type="radio"  name="anode" value="mo" id="a01" checked disabled />  </label>
-                  <label> Rh <input type="radio"  name="anode" value="rh" id="a02" disabled />  </label>
-                  <label> W <input type="radio"  name="anode" value="w" id="a03" disabled />  </label>
-                </div>
-            </div>
-
-        </div>
-        <!-- INTERFAZ PANEL DE CONTROL -->
-
-        <!-- Menu oculto herramientas -->
-        <div id="herrams" class="herramientas-pop">
-          <div class="herrams-salir">
-            <button type = "button" onclick="hide_h();">X </button>
-          </div>
-
-          <div class="container">
-            <div class="row">
-              <div class="col-sm">
-                <h3>TIPO A</h3>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 1</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
-              </div>
-              <div class="col-sm">
-                <h3>TIPO B</h3>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 1</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
-              </div>
-              <div class="col-sm">
-                <h3>TIPO C</h3>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 1</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
-                <button title= "Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /Menu oculto herramientas -->
+      </div>
+      <button class="boton-ver-mas" onclick="show_h()">Ver mas</button>
     </div>
+    <!-- /INTERFAZ HERRAMIENTAS -->
 
-    <script type="text/javascript">
-      function show_h() {
-        let x = document.getElementById("herrams");
-        x.style.display = "block";
-      }
+    <!-- INTERFAZ PASOS -->
+    <div class="pasos">
+      <h3>Pasos</h3>
+      <ol id="lista-pasos">
+        <li>Elegir herramienta Balanza en la sección Herramientas.</li>
+        <li>Mantener el pedal izquierdo apretado hasta que el compresor llegue a su punto más bajo.</li>
+        <li>Una vez que el compresor tope con la balanza, en la sección Resultados aparecerá la fuerza real ejercida por
+          la máquina. En el visor del mamógrafo aparecerá la fuerza calculada por el este. Anotar ambos valores en tabla
+          de resultados</li>
+        <li>Apretar el pedal derecho para subir el compresor.</li>
+        <li>Si se quiere medir nuevamente el peso, repetir los puntos 2 y 3.</li>
+        <li>Para finalizar, apretar nuevamente el ícono de la Balanza en la sección Herramientas.</li>
+      </ol>
+    </div>
+    <!-- /INTERFAZ PASOS -->
 
-      function hide_h() {
-        let x = document.getElementById("herrams");
-        x.style.display = "none";
-      }
+    <!-- INTERFAZ PANEL DE CONTROL -->
+    <div class="panel-control">
+      <h3>Panel de control</h3>
+      <div class="container">
+        <div class="row">          
+        <div class="col-sm" style="text-align:right; padding-right: 0px">
+          <div><button class="btnsub" id="kv-" value="kv">-</button></div>
+          <div><button class="btnsub" id="ma-" value="mas">-</button></div>
+        </div>  
+          <div class="col-sm" style="text-align:center;">
+            <form>
+              <input type="number" id="kv" name="kv" min="22" max="35" class="kv_input" value=100>
+              <input type="number" id="mas" name="mas" min="100" max="200" class="mas_input" value=100>
+            </form>
+          </div>        
+          <div class="col-sm" style="text-align:left; padding-left: 0px; padding-right: 0px">
+            <button class="btnadd" id="kv+" value="kv">+</button>
+            <button class="btnadd" id="ma+" value="mas">+</button>
+          </div>
+          <div class="col-sm" style="text-align:left; padding-left: 0px;">
+            <div><label class="kv_label"> kV</label></div>
+            <div><label class="mas_label"> mAs</label></div>
+          </div>
+        </div>
+      </div>
 
-      function show_sim() {
-        let x = document.getElementById("contenedor-sim");
-        x.style.display = "block";
-        let y = document.getElementById("contenedor-button");
-        y.style.display = "none";
-      }
-    </script>
+      <div class="modes">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <button class="btnmode" id="mode-b">MODE</button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <label> AutoKV <input type="radio" name="mode" value="autokv" id="c01" checked disabled /> </label>
+            </div>
+            <div class="col-sm">
+              <label> <input type="radio" name="mode" value="manual" id="c03" disabled /> Manual </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm">
+              <label> Auto Time <input type="radio" name="mode" value="autotime" id="c02" disabled /> </label>
+            </div>
+
+            <div class="col-sm">
+              <label> <input type="radio" name="mode" value="autopoint" id="c04" disabled /> Auto Point </label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="filter-mode">
+          <button class="fltmode" id="filter-b">filter</button>
+          <label> Mo <input type="radio" name="filter" value="mo" id="f01" checked disabled /> </label>
+          <label> Rh <input type="radio" name="filter" value="rh" id="f02" disabled /> </label>
+          <label> W <input type="radio" name="filter" value="w" id="f03" disabled /> </label>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="anode-mode">
+          <button class="anodemode" id="anode-b">anode</button>
+          <label> Mo <input type="radio" name="anode" value="mo" id="a01" checked disabled /> </label>
+          <label> Rh <input type="radio" name="anode" value="rh" id="a02" disabled /> </label>
+          <label> W <input type="radio" name="anode" value="w" id="a03" disabled /> </label>
+        </div>
+      </div>
+
+    </div>
+    <!-- INTERFAZ PANEL DE CONTROL -->
+
+    <!-- Menu oculto herramientas -->
+    <div id="herrams" class="herramientas-pop">
+      <div class="herrams-salir">
+        <button type="button" onclick="hide_h();">X </button>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <h3>TIPO A</h3>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 1</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
+          </div>
+          <div class="col-sm">
+            <h3>TIPO B</h3>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 1</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
+          </div>
+          <div class="col-sm">
+            <h3>TIPO C</h3>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 1</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 2</button>
+            <button title="Esta es la herramienta X." class="herrams-boton" onclick="hide_h();"><img
+                src="https://static.reol.cl/reol.png" width=64><br>Herramienta 3</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /Menu oculto herramientas -->
+  </div>
+
+  <script type="text/javascript" src="amd/src/moves.js"></script>
 
 </body>
 
