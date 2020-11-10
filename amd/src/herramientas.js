@@ -148,7 +148,7 @@ class Slab_20mm extends AbstractTool {
 
     this.scale = 0.5;
     this.x = 152;
-    this.y = 250;
+    this.y = 260;
 
     this.slabs = new Image();
     this.slabs.src = 'img/slab20.svg';
@@ -177,7 +177,7 @@ class Slab_45mm extends AbstractTool {
     // pasar parametros a vista?
     this.scale = 0.5;
     this.x = 152;
-    this.y = 250;
+    this.y = 260;
 
     this.slabs = new Image();
     //nuevo sprite aca
