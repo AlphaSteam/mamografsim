@@ -38,5 +38,6 @@ $services = array(
                 'functions' => array ('mamografsim_hello_world'),
                 'restrictedusers' => 0,
                 'enabled'=>1,
+                'shortname' => 'mamografsim'
         )
 );
