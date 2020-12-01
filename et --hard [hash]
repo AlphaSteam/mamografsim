@@ -1,0 +1,82 @@
+[33mcommit 89d305b22925b9f117bd3a2121ad12e6b495fddc[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 132b9af 0bf16b0
+Author: Raúl Cid <rad.cidbastias@gmail.com>
+Date:   Fri Oct 16 16:28:21 2020 -0300
+
+    Merge pull request #32 from cc5402-Mamografias/herrams-button
+    
+    tamaño de botones disminuido y tooltip de herramientas
+    se agrega fix en compresion de pedal y perillas
+
+[33mcommit 0bf16b0555f372ea37b4f43a24ab1b25e31dd5bf[m[33m ([m[1;31morigin/herrams-button[m[33m)[m
+Merge: b47c1f3 9864218
+Author: Raúl Cid <rad.cidbastias@gmail.com>
+Date:   Fri Oct 16 16:24:13 2020 -0300
+
+    Merge branch 'herrams-button' of https://github.com/cc5402-Mamografias/mamografsim into herrams-button
+
+[33mcommit b47c1f3ddc684364ad2d53c38444d02f8eb05fab[m
+Author: Raúl Cid <rad.cidbastias@gmail.com>
+Date:   Fri Oct 16 16:23:42 2020 -0300
+
+    fix en compresion pedal y perillas
+
+[33mcommit 9864218e21a3ea3829780c21706cd6bc9849857f[m[33m ([m[1;32mherrams-button[m[33m)[m
+Author: GCarboni96 <gianluca.carboni@ing.uchile.cl>
+Date:   Fri Oct 16 16:15:48 2020 -0300
+
+    arreglado el css
+
+[33mcommit e8defeb4c92fd044fe2474ca7781f73952cd601e[m
+Author: GCarboni96 <gianluca.carboni@ing.uchile.cl>
+Date:   Fri Oct 16 16:11:49 2020 -0300
+
+    arreglado el css
+
+[33mcommit 86fbbc1d35f87d7d145009055db7ed9dff06983c[m
+Author: GCarboni96 <gianluca.carboni@ing.uchile.cl>
+Date:   Fri Oct 16 12:59:57 2020 -0300
+
+    tamaño de botones disminuido y mensaje desplegable al dejar el mouse en un boton de herramienta
+
+[33mcommit 132b9af9966d612f15a278523b0acb5c3049ee76[m
+Merge: 9fdd651 942c99e
+Author: Raúl Cid <rad.cidbastias@gmail.com>
+Date:   Thu Oct 15 13:03:08 2020 -0300
+
+    Merge pull request #29 from cc5402-Mamografias/feat-pedal
+    
+    Feat pedal
+
+[33mcommit 942c99e9c0abb8b8671ff81f4b767bfac524a4a5[m[33m ([m[1;31morigin/feat-pedal[m[33m)[m
+Author: José Astorga <jose.n.astorga.tobar@gmail.com>
+Date:   Thu Oct 15 12:51:27 2020 -0300
+
+    [CHG] remove moves.js - esas funciones se movieron temporalmente a interfaces.html
+
+[33mcommit 5c98b9ac7d543de181f77e83cf7ad0540c75660e[m
+Author: José Astorga <jose.n.astorga.tobar@gmail.com>
+Date:   Thu Oct 15 12:42:07 2020 -0300
+
+    [ADD] perillas clickeables y manejo factor de compresión
+
+[33mcommit 2776b9cf33ce21c7294785c092ffd45a9b5bba18[m
+Author: José Astorga <jose.n.astorga.tobar@gmail.com>
+Date:   Thu Oct 15 12:41:46 2020 -0300
+
+    [CHG] refactor de vista - variables globales del módulo - método getCompresorPosY
+
+[33mcommit caa07ff32408a490fbaf20a09e39e087ccb915d6[m
+Author: José Astorga <jose.n.astorga.tobar@gmail.com>
+Date:   Thu Oct 15 12:40:39 2020 -0300
+
+    [ADD] nueva clase ClickeableObject para manejar la lógica de objetos clickeados - se refactoriza pedal.js (puede que tenga que desaparecer)
+
+[33mcommit 9fdd651e00d84c06c2785876b1180255fe117112[m
+Merge: 73ba089 a21984e
+Author: Raúl Cid <rad.cidbastias@gmail.com>
+Date:   Thu Oct 15 12:01:47 2020 -0300
+
+    Merge pull request #26 from cc5402-Mamografias/init-button
+    
+    agregado boton para comenzar el simulador
