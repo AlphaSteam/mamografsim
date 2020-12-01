@@ -20,6 +20,7 @@
         <FIELD NAME="errorvis" TYPE="text" LENGTH="30" NOTNULL="false" SEQUENCE="false" COMMENT="Error de Visor mamografo."/>
         <FIELD NAME="compresion" TYPE="text" LENGTH="300" NOTNULL="false" SEQUENCE="false" COMMENT="Disponibilidad prueba de compresion"/>
         <FIELD NAME="rendimiento" TYPE="text" LENGTH="300" NOTNULL="false" SEQUENCE="false" COMMENT="Disponibilidad prueba de rendimiento"/>
+        <FIELD NAME="imagen" TYPE="text" LENGTH="300" NOTNULL="false" SEQUENCE="false" COMMENT="Disponibilidad prueba de imagen"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>

@@ -230,21 +230,25 @@ export const init = (errors,pruebas2) => {
   }
 
 
-
-  let pruebas = ['compresion', 'rendimiento'];
+  //Agregar una nueva prueba 
+  let pruebas = ['compresion', 'rendimiento', 'imagen'];
   
  
   pruebas = [];
   pruebas2.forEach((prueba)=>{
+    pruebas.push(prueba);
    if(prueba !== ""){
-     pruebas.push(prueba);
+    console.log("prueba pusheada");
+     
    }
   });
   //pruebas = [pruebas2[0],pruebas2[1]];
   
+  //Agregar una nueva prueba 
   var label_prueba = {};
   label_prueba["compresion"] = "Fuerza de Compresión y Precisión de Espesor";
   label_prueba["rendimiento"] = "Rendimiento: Repetibilidad y Linealidad";
+  label_prueba["imagen"] = "Control de Calidad de un Objeto de Prueba y Artefactos en el Receptor de Imagen";
 
   $('<h2> Seleccionar una prueba: </h2> <br>').appendTo("#contenedor-button")
 

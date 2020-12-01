@@ -75,10 +75,13 @@ $errorma = $moduleinstance->errorma;
 $errorf = $moduleinstance->errorf;
 $erroralt = $moduleinstance->erroralt;
 
+//Agregar una nueva prueba 
 $compresion = $moduleinstance->compresion;
 $rendimiento = $moduleinstance->rendimiento;
+$imagen = $moduleinstance->imagen;
 
-$PAGE->requires->js_call_amd('mod_mamografsim/main','init',array(array(array('errorkv',$errorkv),array('errorma',$errorma),array('errorf',$errorf),array('erroralt',$erroralt),array('errorvis',$errorvis)),array($compresion,$rendimiento)) );
+//Agregar una nueva prueba
+$PAGE->requires->js_call_amd('mod_mamografsim/main','init',array(array(array('errorkv',$errorkv),array('errorma',$errorma),array('errorf',$errorf),array('erroralt',$erroralt),array('errorvis',$errorvis)),array($compresion,$rendimiento,$imagen)) );
 $PAGE->requires->js_call_amd('mod_mamografsim/control-panel','init');
 
 
