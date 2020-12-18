@@ -22,12 +22,12 @@
         <FIELD NAME="errorimglin" TYPE="text" LENGTH="30" NOTNULL="false" SEQUENCE="false" COMMENT="Error de lineas en imagen."/>
         <FIELD NAME="errorimgsp" TYPE="text" LENGTH="30" NOTNULL="false" SEQUENCE="false" COMMENT="Error de puntos en imagen."/>
         <FIELD NAME="errorvmp" TYPE="text" LENGTH="30" NOTNULL="false" SEQUENCE="false" COMMENT="Error de contraste."/>
-        <FIELD NAME="compresion" TYPE="text" LENGTH="300" NOTNULL="false" SEQUENCE="false" COMMENT="Disponibilidad prueba de compresion"/>
-        <FIELD NAME="compresion_label" TYPE="text" LENGTH="300" NOTNULL="false" SEQUENCE="false" COMMENT="Label prueba de compresión"/>
+        <FIELD NAME="compresion" TYPE="text" LENGTH="300" NOTNULL="false" SEQUENCE="false" COMMENT="Disponibilidad prueba de compresión"/>
+        <FIELD NAME="compresion_label" TYPE="text" LENGTH="300" NOTNULL="true" SEQUENCE="false" COMMENT="Label prueba de compresión"/>
         <FIELD NAME="rendimiento" TYPE="text" LENGTH="300" NOTNULL="false" SEQUENCE="false" COMMENT="Disponibilidad prueba de rendimiento"/>
-        <FIELD NAME="rendimiento_label" TYPE="text" LENGTH="300" NOTNULL="false" SEQUENCE="false" COMMENT="Label prueba de rendimiento"/>
+        <FIELD NAME="rendimiento_label" TYPE="text" LENGTH="300" NOTNULL="true" SEQUENCE="false" COMMENT="Label prueba de rendimiento"/>
         <FIELD NAME="imagen" TYPE="text" LENGTH="300" NOTNULL="false" SEQUENCE="false" COMMENT="Disponibilidad prueba de imagen"/>
-        <FIELD NAME="imagen_label" TYPE="text" LENGTH="300" NOTNULL="false" SEQUENCE="false" COMMENT="Label prueba de imagen"/>
+        <FIELD NAME="imagen_label" TYPE="text" LENGTH="300" NOTNULL="true" SEQUENCE="false" COMMENT="Label prueba de imagen"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
